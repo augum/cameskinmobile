@@ -10,9 +10,11 @@ const Uploadexcel = () => {
 
   const fileType = [
     'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+    'text/csv',
   ]
   const handelFile = (e) => {
     let selectedFile = e.target.files[0]
+    console.log(selectedFile)
     if (selectedFile) {
       if (selectedFile && fileType.includes(selectedFile.type)) {
         let reader = new FileReader()
@@ -22,7 +24,7 @@ const Uploadexcel = () => {
           setExcelFile(e.target.result)
         }
       } else {
-        setExcelFileError('Please select only excel file type')
+        setExcelFileError('Please select only excel file type or csv file')
         setExcelFile(null)
       }
     } else {
@@ -37,6 +39,7 @@ const Uploadexcel = () => {
       const worksheetName = workbook.SheetNames[0]
       const worksheet = workbook.Sheets[worksheetName]
       const data = XLSX.utils.sheet_to_json(worksheet)
+
       setExcelData(data)
     } else {
       setExcelData(null)
@@ -87,9 +90,11 @@ const Uploadexcel = () => {
               <table className="table">
                 <thead>
                   <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Postnom</th>
+                    <th scope="col">CodePnam</th>
+                    <th scope="col">Libelle</th>
+                    <th scope="col">Nodelot</th>
+                    <th scope="col">Peremption</th>
+                    <th scope="col">Quantite</th>
                   </tr>
                 </thead>
                 <tbody>

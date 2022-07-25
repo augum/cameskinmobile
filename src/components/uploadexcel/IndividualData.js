@@ -3,9 +3,11 @@ import React from 'react'
 const IndividualData = ({ individualExleData }) => {
   return (
     <>
-      <th>{individualExleData.Id}</th>
-      <th>{individualExleData.Name}</th>
-      <th>{individualExleData.PostNom}</th>
+      <th>{individualExleData.CodePnam}</th>
+      <th>{individualExleData.Libelle}</th>
+      <th>{individualExleData.Nodelot}</th>
+      <th>{individualExleData.Peremption}</th>
+      <th>{individualExleData.Quantite}</th>
     </>
   )
 }

@@ -4,8 +4,14 @@ const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
       <div className="container-fluid">
-        <a class="navbar-brand" href="#">
-          Logo
+        <a className="navbar-brand" href="#">
+          <img
+            className="rounded-circle"
+            src="assets/img/c3.png"
+            alt="logo"
+            width="30"
+            height="30"
+          />
         </a>
         <button
           className="navbar-toggler"
